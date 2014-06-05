@@ -9,6 +9,8 @@ post '/sessions/create' do
   redirect to 'user/:username'
 end
 
+
+
 get '/user/:username'
   cotains twit_post form
 end
@@ -16,4 +18,6 @@ end
 post 'twits/new'
   redirect 'user/:username'
 end
+
+
 =end

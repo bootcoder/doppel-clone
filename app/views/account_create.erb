@@ -1,0 +1,9 @@
+<%= session[:message] %>
+<form action="/account/create" method="post">
+	Name: <input type="text" name="name">
+	User Name: <input type="text" name="username">
+	Email: <input type="text" name="email">
+	Password: <input type="password" name="password">
+	Confirm Password: <input type="password" name="confirm_password">
+	<input type="submit" value="submit">
+</form>
