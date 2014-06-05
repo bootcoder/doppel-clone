@@ -18,6 +18,42 @@
   <title></title>
 </head>
 <body>
+  <header id="top_nav">
+    LOGO GOES HERE!!
+    <% if session[:id] == nil %>
+
+      <ul class="account_management">
+        <li>
+          <form id="login_form" action="/sessions/create" method="post">
+          User Name: <input type="text" name="username" size="10">
+          Password: <input type="password" name="password" size="10">
+          <input type="submit" value="Login">
+          </form>
+        </li>
+
+        <li>
+          <form id="creation_form" action="/account/create" method="get">
+            <input type="submit" value="Create Account">
+          </form>
+        </li>
+      </ul>
+      <%= session[:message] %>
+
+    <% else %>
+
+      <ul class="account_management">
+        <li>Hi there, user!</li>
+        <li>
+          <form id="logout_form" action="/logout" method="get">
+            <input type="submit" value="Logout!">
+          </form>
+        </li>
+      </ul>
+
+    <% end %>
+    <div class="clear_floats"></div>
+  </header>
+
   <%= yield %>
 </body>
 </html>

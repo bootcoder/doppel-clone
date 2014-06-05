@@ -42,6 +42,11 @@ get '/users/:username' do
 	erb :user_page
 end
 
+get '/logout' do
+	session.clear
+	redirect '/'
+end
+
 
 
 

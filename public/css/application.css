@@ -1,0 +1,22 @@
+.account_management {
+	list-style-type: none;
+	margin-right: 30px;
+	float: right;
+}
+
+.account_management form,
+.account_management li {
+	display: inline;
+}
+
+#login_form input {
+	margin-right: 15px;
+}
+
+#creation_form {
+	margin-left: 30px;
+}
+
+.clear_floats {
+	clear:both;
+}
