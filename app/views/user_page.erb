@@ -1,5 +1,7 @@
 <% if session[:id] = @user.id %>
-<form>
+<form id="new_twit_form" action="/post_twit" method="post">
+	<textarea name="content" rows="5" cols="35" maxlength="140"></textarea>
+	<input type="submit" value="Give a twit!">
 </form>
 <% end %>
 
