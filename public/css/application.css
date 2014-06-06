@@ -107,12 +107,23 @@ header a {
   color: #403E46;
 }
 
-.inblocklist {
+.twitby {
   color: #57545E;
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 0.85em;
 }
 
-.profilelist {
-
+.userstwits {
+  width: 100%;
+  color: #4C3879;
+  text-decoration: none;
+  background-color: #C5BFD1;
+  padding: 10px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 5px;
 }
 
 
@@ -131,7 +142,7 @@ header a {
 }
 
 .usertwit {
-  width: 35%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -143,7 +154,9 @@ header a {
 
 
 /* header styles */
-h1, h2, h3 {
+h1, h2, h3, h4 {
   color: #2A303A;
   margin-left: 50px;
+  font-size: 25px;
+  text-transform: uppercase;
 }

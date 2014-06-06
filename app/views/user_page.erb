@@ -1,19 +1,21 @@
+  <div class="container">
   <% if session[:id] == @user.id %>
     <div class="usertwit">
       <form id="new_twit_form" action="/post_twit" method="post">
     	 <textarea name="content" rows="5" cols="35" maxlength="140"></textarea>
     	 <input type="submit" value="Give a twit!">
       </form>
-    </table>
-  </div>
+    </div>
   <% end %>
 
   <% if Twit.find_by_user_id(@user.id) == nil %>
   	<h4><%= @user.name %> (<%= @user.username %>) has no twits.  That's called being a twitiot.
   <% else %>
+    <h4><%= @user.username %>'s Twits</h4>
   	<ul>
   		<% Twit.where(user_id: @user.id).each do |twit| %>
-  			<li class="twitblocklist"><%= twit.content %></li><br/>
+  			<li class="userstwits"><%= twit.content %></li><br/>
   		<% end %>
   	</ul>
   <% end %>
+</div>
