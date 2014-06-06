@@ -36,10 +36,12 @@ post '/sessions/create' do
 	end
 end
 
+
 get '/users/:username' do
 	@user = User.find_by_username(params[:username])
 	erb :user_page
 end
+
 
 get '/logout' do
 	session.clear

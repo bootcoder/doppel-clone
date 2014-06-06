@@ -42,7 +42,7 @@
     <% else %>
 
       <ul class="account_management">
-        <li>Hi there, user!</li>
+        <li>Hi there, <%= @current_user.name %>!</li>
         <li>
           <form id="logout_form" action="/logout" method="get">
             <input type="submit" value="Logout!">
