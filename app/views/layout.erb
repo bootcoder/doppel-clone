@@ -43,7 +43,7 @@
     <% current_user %>
 
       <ul class="account_management">
-        <li>Hi there, <%= @current_user.name %>!</li>
+        <li>Hi there, <a href="/users/<%= @current_user.username %>"><%= @current_user.name %></a>!</li>
         <li>
           <form id="profile_form" action="/profile/<%= @current_user.username %>" method="get">
             <input type="submit" value="Profile">
