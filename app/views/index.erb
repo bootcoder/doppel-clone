@@ -1,8 +1,14 @@
 <% if session[:id] == nil %>
   <ul>
-      <% 3.times do%>
-        <% offset = 1 + rand(Twit.count) %>
-        <li><%= Twit.find(offset).content%></li>
+      <% if Twit.count < 5 %>
+        <% Twit.all.each do |twit|%>
+        <li>"<%= twit.content%>" - from - <%= twit.user.name %> (<%= twit.user.username %>)</li>
+        <% end %>
+      <% else %>
+        <% ( 5 + sqrt(Twit.count).floor/5).times do%>
+          <% random_twit = Twit.all.sample %>
+          <li>"<%= random_twit.content %>" - from - <%= random_twit.user.name %> (<%= twit.user.username %>)</li>
+        <% end %>
       <% end %>
   </ul>
 <% else %>
