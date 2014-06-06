@@ -29,7 +29,7 @@ post '/profile/:username/update' do
 end
 
 post '/profile/:username/password' do
-	if params[:old_password] == current_user.password && params[:password] == params[:confirm_password]
+	if params[:old_password] == current_user.password && (params[:password] == params[:confirm_password]) && params[:password] != nil
 			session[:message] = nil
 			current_user.update(password: params[:password])
 			redirect "/profile/#{current_user.username}"
