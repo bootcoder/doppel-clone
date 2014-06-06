@@ -11,18 +11,58 @@ get "/profile/:username" do
 end
 
 get '/profile/:username/update' do
+	current_user
 	erb :user_update
 end
 
 get '/profile/:username/password' do
+	current_user
 	erb :user_update
 end
 
 
 post '/profile/:username/update' do
+	p params
+	current_user.update(name: params[:name], username: params[:username], email: params[:email], password: params[:password])
+	redirect "/profile/#{current_user.username}"
 
 end
 
 post '/profile/:username/password' do
-
+	if params[:old_password] == @current_user.password && params[:password] == params[:confirm_password]
+			session[:message] = nil
+			current_user.update(password: params[:password])
+			redirect "/profile/#{current_user.username}"
+	else
+		session[:message] = "Passwords do not match"
+		redirect "/profile/#{current_user.username}/password"
+	end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
