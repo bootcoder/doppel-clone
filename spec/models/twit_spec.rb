@@ -1,12 +1,12 @@
-describe Twit do
-	it "has content" do
+# describe Twit do
+# 	it "has content" do
 
-	end
+# 	end
 
 
-	it "has a user / author" do
-	end
+# 	it "has a user / author" do
+# 	end
 
-	it "is less than 140 characters" do
-	end
-end
+# 	it "is less than 140 characters" do
+# 	end
+# end

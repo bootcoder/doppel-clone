@@ -16,11 +16,12 @@ describe User do
 	# let idea
 
 	it "creates a user when given proper params" do
-		expect {User.create(username: "testname", name: "Mister Jenkins", email: "hello@example.com", password: "abc123")}.to change {User.count}.by(1)
+		expect {User.create(username: "testname", name: "Mister Jenkins", email: "hello@example.com", password: "abc1234")}.to change{User.count}.by(1)
 	end
 
-	it "does not create a user when given invalid params" do
-	end
+	# it "does not create a user when given invalid params" do
+	# 	expect {User.create(username: "", name: "Mister Jenkins", email: "hello@example.com", password: "")}.should_not be_valid
+	# end
 
 
 end
