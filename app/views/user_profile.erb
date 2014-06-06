@@ -1,21 +1,23 @@
-<h2>Account Details:</h2>
-<div class="inline_buttons">
-	  <form action="/profile/<%= @current_user.username %>/update" method="get">
-	    <input type="submit" value="Edit Profile">
-	  </form>
+<div class="container">
+	<h2>Account Details:</h2>
+	<div class="inline_buttons">
+		  <form action="/profile/<%= @current_user.username %>/update" method="get">
+		    <input type="submit" value="Edit Profile">
+		  </form>
 
+		<br>
+
+		  <form action="/profile/<%= @current_user.username %>/password" method="get">
+		    <input type="submit" value="Change Password">
+		  </form>
+	</div>
 	<br>
 
-	  <form action="/profile/<%= @current_user.username %>/password" method="get">
-	    <input type="submit" value="Change Password">
-	  </form>
+	<h3>Profile: <%= @current_user.username %>!</h3>
+	<ul class="profilelist">
+		<li>Name: <%= @current_user.name %></li>
+		<li>User name: <%= @current_user.username %></li>
+		<li>Email: <%= @current_user.email %></li>
+		<li>Member since: <%= @current_user.created_at %></li>
+	</ul>
 </div>
-<br>
-
-<h3>Profile: <%= @current_user.username %>!</h3>
-<ul>
-	<li>Name: <%= @current_user.name %></li><br>
-	<li>User name: <%= @current_user.username %></li><br>
-	<li>Email: <%= @current_user.email %></li><br>
-	<li>Member since: <%= @current_user.created_at %></li>
-</ul>
