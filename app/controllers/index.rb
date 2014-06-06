@@ -46,6 +46,12 @@ get '/logout' do
 	redirect '/'
 end
 
+post '/post_twit' do
+	user = User.find(session[:id])
+	user.twits << Twit.create({content: params[:content]})
+	user.save
+	redirect "/users/#{user.username}"
+end
 
 
 
