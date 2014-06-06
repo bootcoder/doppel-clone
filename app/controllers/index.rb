@@ -10,6 +10,27 @@ get '/account/create' do
 end
 
 post '/account/create' do
+	#validate presence of name
+	if params[:name].length == 0
+		session[:message] = "Please enter your name to create an account!"
+		redirect '/account/create'
+	end
+	#validates username is not taken
+	if User.find_by_username(params[:username]) != nil
+		session[:message] = "That username has been taken!"
+		redirect '/account/create'
+	end
+	#validates email has not already been used
+	if User.find_by_email(params[:email]) != nil
+		session[:message] = "Account has already been created with this email!"
+		redirect '/account/create'
+	end
+	#validates password is a valid length
+	if params[:password].length < 6 || params[:password].length > 15
+		session[:message] = "Password must be between 6 and 15 characters!"
+		redirect '/account/create'
+	end
+	#If all above validations pass and pass and confirm pass match, create account
 	if params[:password] == params[:confirm_password]
 		new_user = User.create(name: params[:name], username: params[:username], email: params[:email], password: params[:password])
 		session[:message] = nil

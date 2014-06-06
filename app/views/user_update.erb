@@ -1,7 +1,8 @@
 <h2>Edit Profile</h2>
 <form action="/profile/<%= @current_user.username %>/update" method="post">
 	Name: <input type="text" name="name" value="<%= @current_user.name %>"><br/>
-	User Name: <input type="text" name="username" value="<%= @current_user.username %>"><br/>
+	User Name: <input type="text" name="updated_username" value="<%= @current_user.username %>"><br/>
 	Email: <input type="text" name="email" value="<%= @current_user.email %>"><br/>
 	<input type="submit" value="Update">
 </form>
+<%= session[:message] %>
