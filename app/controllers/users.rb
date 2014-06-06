@@ -38,20 +38,26 @@ post '/profile/:username/update' do
 		redirect '/profile/:username/update'
 	end
 
-	p params
+	session[:message] = nil
 	current_user.update(name: params[:name], username: params[:updated_username], email: params[:email])
 	redirect "/profile/#{current_user.username}"
 
 end
 
 post '/profile/:username/password' do
-	if params[:old_password] == current_user.password && (params[:password] == params[:confirm_password]) && params[:password] != nil && params[:password].length != 0
-			session[:message] = nil
-			current_user.update(password: params[:password])
-			redirect "/profile/#{current_user.username}"
-	else
-		session[:message] = "Password Error: Please try again."
+	if params[:old_password] != current_user.password
+		session[:message] = "Incorrect password: Please try again."
 		redirect "/profile/#{current_user.username}/password"
+	elsif params[:new_password] != params[:confirm_password]
+		session[:message] = "Password confirmation did not match new password."
+		redirect "/profile/#{current_user.username}/password"
+	elsif (6..15).include?(params[:new_password].length) == false
+		session[:message] = "Your new password must be between 6 and 15 characters."
+		redirect "/profile/#{current_user.username}/password"
+	else
+			session[:message] = nil
+			current_user.update(password: params[:new_password])
+			redirect "/profile/#{current_user.username}"
 	end
 end
 
