@@ -79,11 +79,9 @@ header input {
   width: 35%;
   margin: 10px auto;
   border-radius: 5px;
-  color: #403E46;
 }
 
 .blocklist a:hover {
-  color: #FFFFFF;
   text-decoration: none;
   background-color: #9892A6;
   padding: 10px;
