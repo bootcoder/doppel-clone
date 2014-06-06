@@ -40,9 +40,15 @@
       <%= session[:message] %>
 
     <% else %>
+    <% current_user %>
 
       <ul class="account_management">
         <li>Hi there, <%= @current_user.name %>!</li>
+        <li>
+          <form id="profile_form" action="/profile/<%= @current_user.username %>" method="get">
+            <input type="submit" value="Profile">
+          </form>
+        </li>
         <li>
           <form id="logout_form" action="/logout" method="get">
             <input type="submit" value="Logout!">
