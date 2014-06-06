@@ -5,24 +5,24 @@
 
 
 
-get "/users/:username" do
+get "/profile/:username" do
 	current_user
-	erb :user_page
+	erb :user_profile
 end
 
-get '/users/:username/update' do
+get '/profile/:username/update' do
 	erb :user_update
 end
 
-get '/users/:username/password' do
+get '/profile/:username/password' do
 	erb :user_update
 end
 
 
-post '/users/:username/update' do
+post '/profile/:username/update' do
 
 end
 
-post '/users/:username/password' do
+post '/profile/:username/password' do
 
 end

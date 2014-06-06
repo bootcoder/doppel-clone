@@ -1,4 +1,3 @@
-# routes go here
 enable :sessions
 
 get '/' do
@@ -24,7 +23,7 @@ end
 
 
 post '/sessions/create' do
-	
+
 	user = User.find_by_username(params[:username])
 	if user == nil || user.password != params[:password]
 		# refactor message for non persistent state...
@@ -38,12 +37,23 @@ post '/sessions/create' do
 end
 
 
+get '/users/:username' do
+	@user = User.find_by_username(params[:username])
+	erb :user_page
+end
+
 
 get '/logout' do
 	session.clear
 	redirect '/'
 end
 
+post '/post_twit' do
+	user = User.find(session[:id])
+	user.twits << Twit.create({content: params[:content]})
+	user.save
+	redirect "/users/#{user.username}"
+end
 
 
 
