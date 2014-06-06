@@ -28,10 +28,10 @@ post '/profile/:username/update' do
 		redirect '/profile/:username/update'
 	end
 	#validates username is not taken by ANOTHER user
-	# if (User.find_by_username(params[:username]) != nil) && current_user.username != params[:username]
-	# 	session[:message] = "That username has been taken!"
-	# 	redirect '/profile/:username/update'
-	# end
+	if (User.find_by_username(params[:updated_username]) != nil) && current_user.username != params[:updated_username]
+		session[:message] = "That username has been taken!"
+		redirect '/profile/:username/update'
+	end
 	#validates email has not already been used by ANOTHER user
 	if User.find_by_email(params[:email]) != nil && User.find_by_email(params[:email]).id != session[:id]
 		session[:message] = "Account has already been created with this email!"
