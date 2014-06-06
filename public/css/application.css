@@ -9,8 +9,9 @@
 /* Header Elements */
 
 header {
-  background-color: #475D58;
+  background-color: #3D3945;
   color: #ffffff;
+  margin-bottom: 20px;
 }
 
 header .logo {
@@ -22,7 +23,7 @@ header .logo {
 }
 
 header input {
-  color: midnightblue;
+  color: #696969;
 }
 
 .account_management {
@@ -36,7 +37,7 @@ header input {
 	display: inline;
 }
 
-#login_form input {
+#login_form, #profile_form input {
 	margin-right: 15px;
 }
 
@@ -50,4 +51,49 @@ header input {
 
 #new_twit_form textarea {
 	resize: none;
+}
+
+
+/* list styling */
+.twitblocklist {
+  list-style-type: none;
+  background-color: #D7D4DD;
+  padding: 10px;
+  display: block;
+  width: 35%;
+  margin: 10px auto;
+  border-radius: 5px;
+  color: #403E46;
+}
+
+.blocklist{
+  list-style-type: none;
+}
+
+.blocklist a {
+  color: #4C3879;
+  text-decoration: none;
+  background-color: #C5BFD1;
+  padding: 10px;
+  display: block;
+  width: 35%;
+  margin: 10px auto;
+  border-radius: 5px;
+  color: #403E46;
+}
+
+.blocklist a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #9892A6;
+  padding: 10px;
+  display: block;
+  width: 35%;
+  margin: 10px auto;
+  border-radius: 5px;
+  color: #403E46;
+}
+
+.inblocklist {
+  color: #57545E;
 }
