@@ -1,10 +1,14 @@
-/* General Layout Elements */
+/* General Styles */
 
 @font-face {
   font-family: 'Cocogoose';
   src: url('/fonts/Cocogoose.otf');
 }
 
+.container {
+  width: 45%;
+  margin: 0 auto;
+}
 
 /* Header Elements */
 
@@ -24,6 +28,10 @@ header .logo {
 
 header input {
   color: #696969;
+}
+
+header a {
+  color: #BAB4CC;
 }
 
 .account_management {
@@ -53,8 +61,15 @@ header input {
 	resize: none;
 }
 
+.sessionmessage {
+  display: block;
+  text-align: right;
+  margin-right: 50px;
+}
+
 
 /* list styling */
+
 .twitblocklist {
   list-style-type: none;
   background-color: #D7D4DD;
@@ -92,6 +107,56 @@ header input {
   color: #403E46;
 }
 
-.inblocklist {
+.twitby {
   color: #57545E;
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 0.85em;
+}
+
+.userstwits {
+  width: 100%;
+  color: #4C3879;
+  text-decoration: none;
+  background-color: #C5BFD1;
+  padding: 10px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+
+/* FORM STYLING */
+.mainform tr {
+  padding-bottom: 3px;
+}
+
+.mainform tr td {
+  padding: 3px;
+  text-align: right;
+}
+
+.mainform tr td input {
+  background-color: #D7D4DD;
+}
+
+.usertwit {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.usertwit input, .usertwit textarea {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+
+/* header styles */
+h1, h2, h3, h4 {
+  color: #2A303A;
+  margin-left: 50px;
+  font-size: 25px;
+  text-transform: uppercase;
 }

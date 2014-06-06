@@ -15,7 +15,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>DoppelTwit</title>
 </head>
 <body>
   <header id="top_nav">
@@ -37,13 +37,13 @@
           </form>
         </li>
       </ul>
-      <%= session[:message] %>
+      <br /><span class="sessionmessage"><%= session[:message] %></span>
 
     <% else %>
     <% current_user %>
 
       <ul class="account_management">
-        <li>Hi there, <%= @current_user.name %>!</li>
+        <li>Hi there, <a href="/users/<%= @current_user.username %>"><%= @current_user.name %></a>!</li>
         <li>
           <form id="profile_form" action="/profile/<%= @current_user.username %>" method="get">
             <input type="submit" value="Profile">

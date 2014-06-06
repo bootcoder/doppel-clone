@@ -8,7 +8,7 @@
       <% else %>
         <% ( 5 + Math.sqrt(Twit.count).floor/5 ).times do %>
           <% random_twit = Twit.all.sample %>
-          <li class="twitblocklist">"<%= random_twit.content %>" - from - <%= random_twit.user.name %> (<%= random_twit.user.username %>)</li>
+          <li class="twitblocklist">"<%= random_twit.content %>" <span class="twitby">- from - <%= random_twit.user.name %> (<%= random_twit.user.username %>)</span></li>
         <% end %>
       <% end %>
   </ul>
