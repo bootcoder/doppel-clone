@@ -17,7 +17,7 @@ end
 
 get '/profile/:username/password' do
 	current_user
-	erb :user_update
+	erb :user_update_password
 end
 
 
@@ -29,12 +29,12 @@ post '/profile/:username/update' do
 end
 
 post '/profile/:username/password' do
-	if params[:old_password] == @current_user.password && params[:password] == params[:confirm_password]
+	if params[:old_password] == current_user.password && params[:password] == params[:confirm_password]
 			session[:message] = nil
 			current_user.update(password: params[:password])
 			redirect "/profile/#{current_user.username}"
 	else
-		session[:message] = "Passwords do not match"
+		session[:message] = "Password Error: Please try again."
 		redirect "/profile/#{current_user.username}/password"
 	end
 end
