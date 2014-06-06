@@ -15,7 +15,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>DoppelTwit</title>
 </head>
 <body>
   <header id="top_nav">
@@ -37,7 +37,7 @@
           </form>
         </li>
       </ul>
-      <%= session[:message] %>
+      <br /><span class="sessionmessage"><%= session[:message] %></span>
 
     <% else %>
     <% current_user %>
