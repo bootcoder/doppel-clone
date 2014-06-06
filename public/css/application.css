@@ -30,6 +30,10 @@ header input {
   color: #696969;
 }
 
+header a {
+  color: #BAB4CC;
+}
+
 .account_management {
 	list-style-type: none;
 	margin-right: 30px;
