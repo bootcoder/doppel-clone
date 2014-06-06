@@ -20,3 +20,7 @@
 .clear_floats {
 	clear:both;
 }
+
+#new_twit_form textarea {
+	resize: none;
+}
