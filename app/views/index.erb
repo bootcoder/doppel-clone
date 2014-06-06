@@ -6,7 +6,7 @@
         <li class="twitblocklist">"<%= twit.content%>" - from - <%= twit.user.name %> (<%= twit.user.username %>)</li>
         <% end %>
       <% else %>
-        <% ( 5 + Math.sqrt(Twit.count).floor/5).times do%>
+        <% ( 5 + Math.sqrt(Twit.count).floor/5 ).times do %>
           <% random_twit = Twit.all.sample %>
           <li class="twitblocklist">"<%= random_twit.content %>" - from - <%= random_twit.user.name %> (<%= random_twit.user.username %>)</li>
         <% end %>
