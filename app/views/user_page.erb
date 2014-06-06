@@ -2,7 +2,12 @@
 <form>
 </form>
 <% end %>
-
-<ul>
-Twits
-</ul>
+<% if Twit.find_by_user_id(@user.id) == nil %>
+	<h4><%= @user.name %> (<%= @user.username %>) has no twits. He is a ledig-twit.
+<% else %>
+	<ul>
+		<% Twit.where(user_id: @user.id).each do |twit| %>
+			<li><%= twit.content %></li><br/>
+		<% end %>
+	</ul>
+<% end %>
