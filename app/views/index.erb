@@ -2,12 +2,12 @@
   <ul>
       <% if Twit.count < 5 %>
         <% Twit.all.each do |twit|%>
-        <li>"<%= twit.content%>" - from - <%= twit.user.name %> (<%= twit.user.username %>)</li>
+        <li class="twitblocklist">"<%= twit.content%>" - from - <%= twit.user.name %> (<%= twit.user.username %>)</li>
         <% end %>
       <% else %>
         <% ( 5 + sqrt(Twit.count).floor/5).times do%>
           <% random_twit = Twit.all.sample %>
-          <li>"<%= random_twit.content %>" - from - <%= random_twit.user.name %> (<%= twit.user.username %>)</li>
+          <li class="twitblocklist">"<%= random_twit.content %>" - from - <%= random_twit.user.name %> (<%= twit.user.username %>)</li>
         <% end %>
       <% end %>
   </ul>
@@ -15,7 +15,7 @@
   <h1>Welcome! </h1>
   <ul>
   <% User.all.each do |user| %>
-    <li><a href="/users/<%= user.username %>"><%= user.username %></a></li>
+    <li class="blocklist"><a href="/users/<%= user.username %>"><%= user.username %></a></li>
   <% end %>
   </ul>
 <% end %>
