@@ -9,19 +9,19 @@ describe "index controller" do
   end
 
   context "/account/create" do
-  let(:valid_params) {{name: "Allison", username: "pinkarrison", email: "allison@example.com", password: "allison"}}
+    let(:valid_params) {{name: "Allison", username: "pinkarrison", email: "allison@example.com", password: "allison"}}
     it "creates a post and redirects with valid params" do
       expect {
-         post '/account/create', :post => valid_params
-         }.to_change {User.count }.by 1
-         expect(last_response).to be_redirect
+         post '/account/create', valid_params
+        }.to change {User.count}.by(1)
+        expect(last_response).to be_redirect
     end
 
-    it "creates a post and redirects with valid params" do
-       expect {
-       post  '/posts'
-       }.to_not change {Post.count }
-      expect(last_response).to be_redirect
+  it "does not create account and redirects without valid params" do
+    expect {
+     post  '/account/create'
+     }.to_not change {User.count}
+    expect(last_response).to be_redirect
     end
   end
 end
