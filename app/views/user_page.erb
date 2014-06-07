@@ -8,6 +8,13 @@
     </div>
   <% end %>
 
+  <% if session[:id] != @user.id %>
+    <form id="follow_form" action="/users/follow/<%= @user.username %>" method="post">
+      Follow / Unfollow
+      <input type="submit" value="Follow/Unfollow">
+    </form>
+  <% end %>
+
   <% if Twit.find_by_user_id(@user.id) == nil %>
   	<h4><%= @user.name %> (<%= @user.username %>) has no twits.  That's called being a twitiot.
   <% else %>
