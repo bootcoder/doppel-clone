@@ -79,6 +79,16 @@ post '/post_twit' do
 end
 
 
+post '/users/follow/:username' do
+	to_follow = User.find_by_username (params[:username])
+	if is_following?(to_follow)
+		unfollow(to_follow)
+	else
+		create_follow(to_follow)
+	end
+	redirect "/users/#{params[:username]}"
+end
+
 
 
 
