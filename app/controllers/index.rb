@@ -35,6 +35,8 @@ post '/account/create' do
 		new_user = User.create(name: params[:name], username: params[:username], email: params[:email], password: params[:password])
 		session[:message] = nil
 		session[:id] = new_user.id
+		current_user
+		create_follow(new_user.id)
 		redirect "/users/#{new_user.username}"
 	else
 		session[:message] = "Passwords do not match!"

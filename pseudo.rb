@@ -20,4 +20,24 @@ post 'twits/new'
 end
 
 
+SET FOLLOW
+FollowConnection.create( follower_user_id: 1, followed_user_id: 2)
+
+
+FIND FOLLOWing
+User.find(2).follower_users
+
+
+FIND FOLLOWers
+User.find(1).follower_users
+
+
+
+
+
+
+User.find(4).follower_users
+
+User.find(4).followed_users
+
 =end
